@@ -35,41 +35,6 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 <script>
 	
- let sealScore = 0;
-let seaLionScore = 0;
-let currentQuestion = 0;
-
-// Check the player's answer
-function checkAnswer(answer) {
-
-    if (answer === "yes") {
-        seaLionScore++;
-    } else {
-        sealScore++;
-    }
-
-    currentQuestion++;
-
-    // Check if all 6 questions are answered
-	if (currentQuestion === 6) {
-        showResult();
-    }
-}
-
-// Show the final result
-function showResult() {
-
-    if (sealScore > seaLionScore) {
-        alert("Your animal is a SEAL! 🦭");
-    }
-
-    else if (seaLionScore > sealScore) {
-        alert("Your animal is a SEA LION! 🦭");
-    }
-	 else {
-        alert("It's a TIE!");
-    }
-}
 
 </script>
 
