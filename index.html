@@ -35,41 +35,41 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 <script>
 	
-      <button onclick="answerQuestion('yes')">Yes</button>
-<button onclick="answerQuestion('no')">No</button>
-
-<p id="result"></p>
-
-<script>
- <button onclick="answerQuestion('yes')">Yes</button>
-<button onclick="answerQuestion('no')">No</button>
-
-<p id="result"></p>
-
-<script>
-let sealScore = 0;
+ let sealScore = 0;
 let seaLionScore = 0;
+let currentQuestion = 0;
 
-function answerQuestion(answer) {
+// Check the player's answer
+function checkAnswer(answer) {
+
     if (answer === "yes") {
         seaLionScore++;
     } else {
         sealScore++;
     }
 
-    document.getElementById("result").innerHTML =
-        "Seal: " + sealScore + " | Sea Lion: " + seaLionScore;
+    currentQuestion++;
 
-    if (sealScore + seaLionScore === 5) {
-        if (sealScore > seaLionScore) {
-			 alert("It's a Seal!");
-        } else if (seaLionScore > sealScore) {
-            alert("It's a Sea Lion!");
-        } else {
-            alert("It's a Tie!");
-        }
+    // Check if all 6 questions are answered
+	if (currentQuestion === 6) {
+        showResult();
     }
-}   
+}
+
+// Show the final result
+function showResult() {
+
+    if (sealScore > seaLionScore) {
+        alert("Your animal is a SEAL! 🦭");
+    }
+
+    else if (seaLionScore > sealScore) {
+        alert("Your animal is a SEA LION! 🦭");
+    }
+	 else {
+        alert("It's a TIE!");
+    }
+}
 
 </script>
 
