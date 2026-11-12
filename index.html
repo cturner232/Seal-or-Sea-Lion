@@ -34,13 +34,42 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 
 <script>
-       let sealScore = 0;
-       let seaLionScore = 0;
-	if (answer === "yes") {
-    seaLionScore++;
+	
+      <button onclick="answerQuestion('yes')">Yes</button>
+<button onclick="answerQuestion('no')">No</button>
+
+<p id="result"></p>
+
+<script>
+ <button onclick="answerQuestion('yes')">Yes</button>
+<button onclick="answerQuestion('no')">No</button>
+
+<p id="result"></p>
+
+<script>
+let sealScore = 0;
+let seaLionScore = 0;
+
+function answerQuestion(answer) {
+    if (answer === "yes") {
+        seaLionScore++;
     } else {
-    sealScore++;
-}
+        sealScore++;
+    }
+
+    document.getElementById("result").innerHTML =
+        "Seal: " + sealScore + " | Sea Lion: " + seaLionScore;
+
+    if (sealScore + seaLionScore === 5) {
+        if (sealScore > seaLionScore) {
+			 alert("It's a Seal!");
+        } else if (seaLionScore > sealScore) {
+            alert("It's a Sea Lion!");
+        } else {
+            alert("It's a Tie!");
+        }
+    }
+}   
 
 </script>
 
