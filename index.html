@@ -34,104 +34,6 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 
 <script>
-	
-	let sealScore = 0;
-    let seaLionScore = 0;
-    let currentQuestion = 0;
-
-    const questions = [
-        {
-            text: "Does the animal have visible ear flaps?",
-            yes: "seaLion"
-        },
-        {
-            text: "Does the animal use its front flippers to swim?",
-            yes: "seaLion"
-        },
-        {
-            text: "Does the animal move on land by wiggling its body?",
-            yes: "seal"
-        },
-        {
-            text: "Can the animal rotate its back flippers forward to walk?",
-			 yes: "seaLion"
-        },
-        {
-            text: "Does the animal have small ear holes instead of visible ears?",
-            yes: "seal"
-        },
-        {
-            text: "Does the animal use its front flippers to steer while swimming?",
-            yes: "seaLion"
-        }
-    ];
-
-    function answerQuestion(answer) {
-
-        let question = questions[currentQuestion];
-
-        if (answer === "yes") {
-            if (question.yes === "seal") {
-				sealScore++;
-            } else {
-                seaLionScore++;
-            }
-        } else {
-            if (question.yes === "seal") {
-                seaLionScore++;
-            } else {
-                sealScore++;
-            }
-        }
-
-        currentQuestion++;
-
-        document.getElementById("tally").innerHTML =
-            "Seal: " + sealScore +
-            " | Sea Lion: " + seaLionScore;
-
-        if (currentQuestion < questions.length) {
-
-            document.getElementById("question").innerHTML =
-                "Question " + (currentQuestion + 1) +
-                ": " + questions[currentQuestion].text;
-
-        } else {
-
-            document.getElementById("question").innerHTML =
-                "Quiz Finished!";
-
-            if (sealScore > seaLionScore) {
-                document.getElementById("result").innerHTML =
-                    "Your animal is a SEAL! 🦭";
-            }
-
-            else if (seaLionScore > sealScore) {
-                document.getElementById("result").innerHTML =
-                    "Your animal is a SEA LION! 🦭";
-            }
-
-            else {
-                document.getElementById("result").innerHTML =
-                    "IT'S A TIE! 🤝";
-            }
-
-        }
-    }
-
-    function restartQuiz() {
-        sealScore = 0;
-        seaLionScore = 0;
-        currentQuestion = 0;
-
-        document.getElementById("question").innerHTML =
-            "Question 1: " + questions[0].text;
-
-        document.getElementById("tally").innerHTML =
-            "Seal: 0 | Sea Lion: 0";
-
-        document.getElementById("result").innerHTML = "";
-    }
 
 </script>
 
@@ -160,7 +62,7 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
+<div id="header" class="w3-container w3-flat-brown">
 	<h1>Seal or Sea Lion!!</h1>
 </div>
 	
