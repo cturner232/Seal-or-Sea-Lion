@@ -35,30 +35,34 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 <script>
 
-  let sealScore = 0;
-let seaLionScore = 0;
+var seal = 0;
+var seaLion = 0;
 
-function answerQuestion(answer) {
-    if (answer === "seal") {
-        sealScore++;
-    } else if (answer === "seaLion") {
-        seaLionScore++;
+function calculate(answer) {
+    if (answer == "seal") {
+        seal++;
+    }
+
+    if (answer == "seaLion") {
+        seaLion++;
     }
 }
 
-function showResult() {
-    if (sealScore > seaLionScore) {
-        window.location.href = "#black-widow";
-    } else if (seaLionScore > sealScore) {
-        window.location.href = "#cellar-spider";
-    } else {
-        window.location.href = "#orb-weaver";
+function results() {
+    if (seal > seaLion) {
+        window.location.hash = "black-widow";
+    }
+    else if (seaLion > seal) {
+        window.location.hash = "cellar-spider";
+    }
+    else {
+        window.location.hash = "orb-weaver";
     }
 }
 
-function restartQuiz() {
-    sealScore = 0;
-    seaLionScore = 0;
+function startOver() {
+    seal = 0;
+    seaLion = 0;
 }
 
 </script>
