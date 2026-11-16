@@ -34,7 +34,6 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 
 <script>
-
 var seal = 0;
 var seaLion = 0;
 
@@ -42,29 +41,28 @@ function calculate(answer) {
     if (answer == "seal") {
         seal++;
     }
-
-    if (answer == "seaLion") {
+    else if (answer == "seaLion") {
         seaLion++;
     }
 }
 
 function results() {
     if (seal > seaLion) {
-        window.location.hash = "seal";
+        window.location.hash = "black-widow";
     }
     else if (seaLion > seal) {
-        window.location.hash = "sealLion";
+        window.location.hash = "cellar-spider";
     }
     else {
-        window.location.hash = "Tie";
+        window.location.hash = "orb-weaver";
     }
 }
 
-function startOver() {
+function restartQuiz() {
     seal = 0;
     seaLion = 0;
+    window.location.hash = "";
 }
-
 </script>
 
 
@@ -128,8 +126,8 @@ function startOver() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#three" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Noisy</a>
-            <a href= "#three" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">Quiet</a>
+            <a href= "#three" onclick="calculate('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Noisy</a>
+            <a href= "#three" onclick="calculate('seal')" class="w3-btn w3-grey w3-round-xxlarge">Quiet</a>
         </p>
         <br><br>
     </div>
@@ -142,22 +140,22 @@ function startOver() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#four" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#Four" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#four" onclick="calculate('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#Four" onclick="calculate('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
 </div>
 
-<div <div class="page" id="four">
+ <div class="page" id="four">
     <div id="header" class="w3-container" style="background-color: #8B4513; color: white;">
         <h1>Question 4 : Does your animal have have long front flippers?</h1>
     </div>
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#five" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#five" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#five" onclick="calculate('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#five" onclick="calculate('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -170,8 +168,8 @@ function startOver() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#six" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#six" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#six" onclick="calculate('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#six" onclick="calculate('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -184,8 +182,11 @@ function startOver() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#seven" onclick="calculate('seal')" showResult(); return false;" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#seven" onclick="calculate('seaLion')" showResult(); return false;" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href="#" onclick="calculate('seal'); results(); return false;"
+class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+
+<a href="#" onclick="calculate('seaLion'); results(); return false;"
+class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -241,7 +242,9 @@ function startOver() {
 	
 	
 <footer class="w3-bottom w3-container" style="background-color: #8B4513; color: white;">
-	<p>HRI!  <a href="# "onclick="restartQuiz()" class="w3-btn w3-grey w3-round-xxlarge" style="float: right"> Start Over</a></p>
+	<p>HRI!  <a href="#" onclick="restartQuiz()"
+class="w3-btn w3-grey w3-round-xxlarge"
+style="float: right">Start Over</a>
 </footer>
 
 </body>
