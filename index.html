@@ -35,7 +35,7 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 <script>
 
-	let sealScore = 0;
+  let sealScore = 0;
 let seaLionScore = 0;
 
 function answerQuestion(answer) {
@@ -48,20 +48,17 @@ function answerQuestion(answer) {
 
 function showResult() {
     if (sealScore > seaLionScore) {
-        window.location.hash = "black-widow";
-    } 
-    else if (seaLionScore > sealScore) {
-        window.location.hash = "cellar-spider";
-    } 
-    else {
-        window.location.hash = "orb-weaver";
+        window.location.href = "#black-widow";
+    } else if (seaLionScore > sealScore) {
+        window.location.href = "#cellar-spider";
+    } else {
+        window.location.href = "#orb-weaver";
     }
 }
 
 function restartQuiz() {
     sealScore = 0;
     seaLionScore = 0;
-    window.location.hash = "";
 }
 
 </script>
