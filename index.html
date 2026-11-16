@@ -35,6 +35,35 @@ There is an issue with the content sometimes getting trapped behind the footer. 
 
 <script>
 
+	let sealScore = 0;
+let seaLionScore = 0;
+
+function answerQuestion(answer) {
+    if (answer === "seal") {
+        sealScore++;
+    } else if (answer === "seaLion") {
+        seaLionScore++;
+    }
+}
+
+function showResult() {
+    if (sealScore > seaLionScore) {
+        window.location.hash = "black-widow";
+    } 
+    else if (seaLionScore > sealScore) {
+        window.location.hash = "cellar-spider";
+    } 
+    else {
+        window.location.hash = "orb-weaver";
+    }
+}
+
+function restartQuiz() {
+    sealScore = 0;
+    seaLionScore = 0;
+    window.location.hash = "";
+}
+
 </script>
 
 
