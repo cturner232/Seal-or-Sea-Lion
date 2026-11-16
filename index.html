@@ -127,8 +127,8 @@ function restartQuiz() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#three" class="w3-btn w3-grey w3-round-xxlarge">Noisy</a>
-            <a href= "#three" class="w3-btn w3-grey w3-round-xxlarge">Quiet</a>
+            <a href= "#three" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Noisy</a>
+            <a href= "#three" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">Quiet</a>
         </p>
         <br><br>
     </div>
@@ -141,8 +141,8 @@ function restartQuiz() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#four" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#Four" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#four" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#Four" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -155,8 +155,8 @@ function restartQuiz() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#five" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#five" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#five" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#five" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -169,8 +169,8 @@ function restartQuiz() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#six" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#six" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#six" onclick="answerQuestion('seaLion')" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#six" onclick="answerQuestion('seal')" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -183,8 +183,8 @@ function restartQuiz() {
 
     <div id="content" class="w3-container">
         <p>
-            <a href= "#seven" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
-            <a href= "#seven" class="w3-btn w3-grey w3-round-xxlarge">No</a>
+            <a href= "#seven" onclick="answerQuestion('seal')" showResult(); return false;" class="w3-btn w3-grey w3-round-xxlarge">Yes</a>
+            <a href= "#seven" onclick="answerQuestion('seaLion')" showResult(); return false;" class="w3-btn w3-grey w3-round-xxlarge">No</a>
         </p>
         <br><br>
     </div>
@@ -240,7 +240,7 @@ function restartQuiz() {
 	
 	
 <footer class="w3-bottom w3-container" style="background-color: #8B4513; color: white;">
-	<p>HRI!  <a href="#" class="w3-btn w3-grey w3-round-xxlarge" style="float: right"> Start Over</a></p>
+	<p>HRI!  <a href="# "onclick="restartQuiz()" class="w3-btn w3-grey w3-round-xxlarge" style="float: right"> Start Over</a></p>
 </footer>
 
 </body>
