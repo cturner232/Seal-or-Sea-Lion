@@ -40,8 +40,7 @@ var seaLion = 0;
 function calculate(answer) {
     if (answer == "seal") {
         seal++;
-    }
-    else if (answer == "seaLion") {
+    } else if (answer == "seaLion") {
         seaLion++;
     }
 }
@@ -49,13 +48,12 @@ function calculate(answer) {
 function results() {
     if (seal > seaLion) {
         window.location.hash = "black-widow";
-    }
-    else if (seaLion > seal) {
+    } else if (seaLion > seal) {
         window.location.hash = "cellar-spider";
-    }
-    else {
+    } else {
         window.location.hash = "orb-weaver";
     }
+	    }
 }
 
 function restartQuiz() {
